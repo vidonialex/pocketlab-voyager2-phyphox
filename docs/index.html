@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Experimentelle Integration des PocketLab Voyager 2 in phyphox: Messgrößen, Installation, QR-Import und technische Einschränkungen.">
+  <title>PocketLab Voyager 2 – Sensorintegration in phyphox</title>
+  <style>
+    :root {color-scheme:dark;--bg:#10151c;--panel:#1c2631;--panel2:#202e3a;--text:#f2f5f8;--muted:#b9c5d2;--accent:#ff8438;--border:#3b4b5c;--focus:#ffcf76}
+    *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 system-ui,-apple-system,'Segoe UI',sans-serif}
+    a{color:#ffad72} a:hover{text-decoration-thickness:2px} a:focus-visible,button:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+    .wrap{max-width:1100px;margin:auto;padding:32px 22px 65px}
+    header{padding:28px 0 18px;border-bottom:1px solid var(--border)} .eyebrow{color:var(--accent);letter-spacing:.12em;text-transform:uppercase;font-size:.76rem;font-weight:700}
+    h1{font-size:clamp(1.9rem,4.8vw,3.1rem);line-height:1.15;margin:10px 0 12px} h2{font-size:1.35rem;line-height:1.3;margin:0 0 14px} h3{font-size:1.08rem;margin:0 0 10px}
+    p{margin:0 0 13px}.lead{max-width:750px;color:var(--muted);font-size:1.12rem}.note{color:var(--muted);font-size:.9rem}
+    nav{display:flex;gap:20px;flex-wrap:wrap;padding:18px 0 0} nav a{text-decoration:none} .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin:24px 0}
+    .card{background:var(--panel);border:1px solid var(--border);border-radius:17px;padding:25px}.wide{grid-column:1/-1}
+    .accent{color:var(--accent)} .btn{display:inline-flex;align-items:center;justify-content:center;min-height:45px;padding:10px 17px;background:var(--accent);color:#141414;text-decoration:none;border-radius:10px;font-weight:750;margin:8px 8px 4px 0}.btn.secondary{border:1px solid var(--border);background:var(--panel2);color:var(--text)}
+    ol{padding-left:1.45em;margin-top:10px} li{padding-left:4px;margin-bottom:6px}
+    .qrbig{max-width:250px;width:100%;height:auto;display:block;background:white;padding:8px;border-radius:8px}
+    .qr-row{display:flex;align-items:start;gap:25px;flex-wrap:wrap}.qr-copy{flex:1;min-width:260px}
+    .offline-img{max-width:370px;width:100%;height:auto;display:block;margin:auto;background:white;padding:8px;border-radius:8px}
+    .viewer{max-width:440px;margin:10px auto 0;text-align:center}.stepinfo{margin:6px 0 12px;color:var(--muted)} .controls{display:flex;justify-content:center;gap:12px;margin-top:14px;flex-wrap:wrap}
+    button{font:inherit;cursor:pointer;border-radius:10px;border:1px solid var(--border);background:var(--panel2);color:var(--text);padding:10px 16px;min-width:112px}
+    .notice{border-left:4px solid var(--accent);background:#252b30;padding:13px 18px;border-radius:3px 8px 8px 3px;margin:20px 0}
+    footer{color:var(--muted);font-size:.87rem;margin-top:30px;border-top:1px solid var(--border);padding-top:17px}
+    @media(max-width:720px){.grid{grid-template-columns:1fr}.wide{grid-column:auto}.wrap{padding:20px 16px 50px}.card{padding:20px}}
+  </style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="eyebrow">Bachelorprojekt Physik · Experimentelle Integration · v0.9.5</div>
+  <h1>PocketLab Voyager 2 in phyphox</h1>
+  <p class="lead">Das PocketLab Voyager 2 über Bluetooth Low Energy mit phyphox verbinden, Messgrößen einzeln oder kombiniert erfassen und die Daten als CSV exportieren. Hier stehen die Experimentdateien und die Installationsanleitungen bereit.</p>
+  <nav aria-label="Seiteninhalt"><a href="#download">Dateidownload</a><a href="#online">Online-QR</a><a href="#offline">Offline-QR</a><a href="#anleitung">Messanleitung</a><a href="#messgroessen">Messgrößen</a><a href="#grenzen">Einschränkungen</a></nav>
+</header>
+<main>
+<div class="grid">
+ <section class="card" id="download">
+   <h2><span class="accent">01</span> Direkter Download</h2>
+   <p>Speichere die gewünschte Experimentdatei auf dem Smartphone und öffne oder importiere sie anschließend in phyphox.</p>
+   <a class="btn" href="experiments/Voyager2_v095_DE.phyphox" download>Deutsch herunterladen</a>
+   <a class="btn secondary" href="experiments/Voyager2_v095_DE_EN.phyphox" download>Deutsch + Englisch</a>
+   <p class="note">Voraussetzungen: Voyager 2, ein Android-Smartphone mit Bluetooth und die phyphox-App. Die zweisprachige Datei verwendet die eingestellte App- beziehungsweise Gerätesprache.</p>
+ </section>
+ <section class="card" id="online">
+   <h2><span class="accent">02</span> Online-QR-Code</h2>
+   <div class="qr-row">
+      <img class="qrbig" src="qr/online.png" alt="Online-QR-Code für die zweisprachige phyphox-Datei" width="250" height="250">
+      <div class="qr-copy"><p>Öffne den QR-Scanner im phyphox-Hauptmenü und scanne diesen Code. phyphox lädt damit die zweisprachige Experimentdatei. Das Smartphone benötigt für diesen Import eine Internetverbindung.</p>
+      <p><a href="experiments/Voyager2_v095_DE_EN.phyphox">Direkt zur zweisprachigen Experimentdatei</a></p>
+      <p class="note">Der Code enthält einen Verweis auf die auf dieser Seite bereitgestellte .phyphox-Datei.</p></div>
+   </div>
+ </section>
+ <section class="card wide" id="offline">
+   <h2><span class="accent">03</span> Deutsch – Offline-QR-Codes (7 Stück)</h2>
+   <p>Lade das QR-Paket vorab herunter oder öffne die Codes auf einem zweiten Bildschirm. Scanne anschließend alle sieben nummerierten Codes nacheinander mit dem phyphox-QR-Scanner. Der Import selbst benötigt keine Internetverbindung; die Messung verwendet weiterhin Bluetooth.</p>
+   <div class="viewer">
+      <div class="stepinfo" aria-live="polite" id="qr-counter">Code 1 von 7</div>
+      <img id="offline-code" class="offline-img" src="qr/offline/QR_01_von_7.png" alt="Offline-QR-Code 1 von 7" width="370" height="370">
+      <div class="controls"><button type="button" id="prev">Zurück</button><button type="button" id="next">Weiter</button></div>
+   </div>
+   <p style="margin-top:18px"><a class="btn secondary" href="downloads/Voyager2_v095_Offline_QR_DE.zip" download>Alle Offline-QR-Codes als ZIP</a></p>
+ </section>
+ <section class="card wide" id="anleitung">
+   <h2>Messung durchführen</h2>
+   <ol>
+     <li>Voyager 2 einschalten, Bluetooth am Smartphone aktivieren und eine bestehende Verbindung zur PocketLab-App beenden.</li>
+     <li>Experiment in phyphox öffnen und den Voyager 2 verbinden.</li>
+     <li>Die phyphox-Aufzeichnung mit <strong>▶</strong> starten. Unter <strong>Sensorauswahl / Sensor Selection</strong> die gewünschten Messgrößen aktivieren und <strong>DATEN STARTEN / START DATA</strong> antippen.</li>
+     <li>Die Diagramme unter <strong>Bewegung / Motion</strong> und <strong>Umgebung / Weather</strong> beobachten.</li>
+     <li>Zum Wechsel der Messgrößen <strong>DATEN STOPPEN / STOP DATA</strong> wählen, die Sensorauswahl ändern und den Datenstrom wieder starten.</li>
+     <li>Nach der Messung den Datenstrom stoppen, die phyphox-Aufzeichnung pausieren und über das Exportmenü eine CSV-Datei speichern.</li>
+   </ol>
+   <div class="notice"><strong>Hinweis zur Zeitachse:</strong> Die Zeitpunkte werden aus BLE-Empfangszeiten und einer angenommenen Abtastrate von ungefähr 20 Hz abgeschätzt. Es handelt sich nicht um Hardware-Zeitstempel des Sensors. Während Verbindungsunterbrechungen entstehen Datenlücken.</div>
+ </section>
+ <section class="card wide" id="messgroessen">
+   <h2>Erfasste Messgrößen</h2>
+   <p>Beschleunigung (m/s²), Winkelgeschwindigkeit (rad/s) und Magnetfeld (µT) werden jeweils in drei Raumachsen aufgezeichnet. Hinzu kommen interne Temperatur (°C), barometrischer Druck (hPa in der Anzeige, Pa im CSV-Export), relative Luftfeuchtigkeit (%), Hitzeindex (°C) und Umgebungslichtintensität (lx).</p>
+   <p>Die acht Messarten sind einzeln oder gleichzeitig auswählbar. Die Zeitdiagramme und der CSV-Export dienen der anschließenden Auswertung.</p>
+ </section>
+ <section class="card wide" id="grenzen">
+   <h2>Stand der Erprobung und Einschränkungen</h2>
+   <p>Die BLE-Steuerung, dynamische Sensorauswahl, Messwertdarstellung und der CSV-Export wurden mit einem PocketLab Voyager 2 und einem Android-Smartphone praktisch getestet. Die deutsche Offline-QR-Variante wurde auf Android importiert. Der abschließende Importtest des Online-QR-Codes in phyphox steht noch aus.</p>
+   <p>Eine unabhängige Kalibrierung und eine systematische Untersuchung der Messunsicherheit gehören bisher nicht zum Testumfang. Beim Start können Einschwingwerte auftreten. Der IR-Distanzsensor und externe Fühler sind noch nicht angebunden.</p>
+ </section>
+</div>
+</main>
+<footer>Unabhängiger experimenteller Prototyp im Rahmen eines Physikstudiums, Version v0.9.5. Keine offizielle Integration oder Zusammenarbeit mit den Anbietern von PocketLab und phyphox. <a href="https://github.com/vidonialex/pocketlab-voyager2-phyphox">Quellrepository und technische Hinweise</a>.</footer>
+</div>
+<script>
+(() => {
+let i=1;const N=7;
+const img=document.getElementById('offline-code');
+const counter=document.getElementById('qr-counter');
+const update=()=>{const nr=String(i).padStart(2,'0');img.src=`qr/offline/QR_${nr}_von_7.png`;img.alt=`Offline-QR-Code ${i} von ${N}`;counter.textContent=`Code ${i} von ${N}`;document.getElementById('prev').disabled=i===1;document.getElementById('next').disabled=i===N;};
+document.getElementById('prev').addEventListener('click',()=>{if(i>1){i--;update();}});
+document.getElementById('next').addEventListener('click',()=>{if(i<N){i++;update();}});
+update();
+})();
+</script>
+</body>
+</html>

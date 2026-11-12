@@ -1,0 +1,12 @@
+{
+  "version": "v0.9.5",
+  "owner": "vidonialex",
+  "repository": "pocketlab-voyager2-phyphox",
+  "intended_site": "https://vidonialex.github.io/pocketlab-voyager2-phyphox/",
+  "online_qr_url": "https://vidonialex.github.io/pocketlab-voyager2-phyphox/experiments/Voyager2_v095_DE_EN.phyphox",
+  "hashes": {
+    "docs/experiments/Voyager2_v095_DE.phyphox": "a7f29d824c1d47a81226d8ba0f85cfc166299874980c57e1fab8c75daea6b6d2",
+    "docs/experiments/Voyager2_v095_DE_EN.phyphox": "ff24b248022e715327e3d9cf5e5f4265721d17ed8b5a68c64484b9d5748dff26",
+    "docs/downloads/Voyager2_v095_Offline_QR_DE.zip": "13f36dc8b7a85842f7fc18224144b66099f7fc33f8f60b864cf1cdbbda0391a8"
+  }
+}
