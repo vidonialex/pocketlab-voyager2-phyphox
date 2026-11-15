@@ -1,6 +1,7 @@
 # PocketLab Voyager 2 – Integration in phyphox
 
 **Entwicklungsstand:** v0.9.6 (experimenteller Prototyp)
+
 **Projektkontext:** Bachelorstudium Physik
 
 ## Zielsetzung
