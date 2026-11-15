@@ -1,12 +1,37 @@
 {
-  "version": "v0.9.5",
+  "version": "v0.9.6",
+  "date": "2026-11-15",
   "owner": "vidonialex",
   "repository": "pocketlab-voyager2-phyphox",
   "intended_site": "https://vidonialex.github.io/pocketlab-voyager2-phyphox/",
-  "online_qr_url": "https://vidonialex.github.io/pocketlab-voyager2-phyphox/experiments/Voyager2_v095_DE_EN.phyphox",
+  "online_qr_url": "https://vidonialex.github.io/pocketlab-voyager2-phyphox/experiments/Voyager2_v096_DE_EN.phyphox",
+  "offline_qr_count": 8,
+  "offline_qr_dir": "docs/qr/offline/v096",
+  "offline_qr_pattern": "QR_{index:02d}_von_8.png",
   "hashes": {
     "docs/experiments/Voyager2_v095_DE.phyphox": "a7f29d824c1d47a81226d8ba0f85cfc166299874980c57e1fab8c75daea6b6d2",
     "docs/experiments/Voyager2_v095_DE_EN.phyphox": "ff24b248022e715327e3d9cf5e5f4265721d17ed8b5a68c64484b9d5748dff26",
-    "docs/downloads/Voyager2_v095_Offline_QR_DE.zip": "13f36dc8b7a85842f7fc18224144b66099f7fc33f8f60b864cf1cdbbda0391a8"
-  }
+    "docs/downloads/Voyager2_v095_Offline_QR_DE.zip": "13f36dc8b7a85842f7fc18224144b66099f7fc33f8f60b864cf1cdbbda0391a8",
+    "docs/experiments/Voyager2_v096_DE_EN.phyphox": "0f8d41c00f61edb049436f65f96e60614618a6aae9f4a40c4f621c3be39c66a8",
+    "docs/experiments/Voyager2_v096_DE.phyphox": "5e5a930a924c5c30aaeaa18639441b9a4362023ceea061771a31469196ad57b6",
+    "docs/downloads/Voyager2_v096_Offline_QR_DE.zip": "4e28caded06ecd03422019dc2e4b83614751730ea9aee276fda3590ba87b654b",
+    "docs/qr/online_v096.png": "20e4728c8bfeda043d220a74d8d60c4236912a8279d111fb6401786bf4bc2104",
+    "docs/qr/offline/v096/QR_01_von_8.png": "48508336c285867786f16378e34bb924ac6cd2b13d500ccc314865d87642dad1",
+    "docs/qr/offline/v096/QR_02_von_8.png": "fdfd0ddc95e38fe90ee5fd2c18ec1d9f74e6e5b48d06df5e97d0315db61151ec",
+    "docs/qr/offline/v096/QR_03_von_8.png": "cd75b20ebbe07905e8975a2fe6892703f72bbf2bbb3e5670fa010eb1c18411ad",
+    "docs/qr/offline/v096/QR_04_von_8.png": "761bce0941e1ce89d5b86a8799b338a4e74eefe3668662959d13942989ca3b53",
+    "docs/qr/offline/v096/QR_05_von_8.png": "344948bb12527d8f1f9fb84d9b99240c458bc259414edcfbc2cec3f7ca5c7b22",
+    "docs/qr/offline/v096/QR_06_von_8.png": "bcf53063102b5494da894c6b8dcd7f9028bf2fe28271b32a5b824e5272f1ff6c",
+    "docs/qr/offline/v096/QR_07_von_8.png": "378be5b289a7775ec7d87445ce54a349358e4cc278e574dd7e68bbbd69eea454",
+    "docs/qr/offline/v096/QR_08_von_8.png": "4c663574118607d438391d9c61cb0954900f0bba69b6985d7e44f428b00f667d",
+    "docs/qr/online.png": "e54840b6e6ce29209dcd56aa04cdb0a4014a45d63eba789311175549defd3184",
+    "docs/qr/offline/QR_01_von_7.png": "4e263a896545dc4d97f8d6cb4b683f967c6569230f3023cd59a7104454f42fc4",
+    "docs/qr/offline/QR_02_von_7.png": "c99ba7a8fe1e85fca0e3b13d51e17ef114b30fb0b6bba82cbf652800479eca4f",
+    "docs/qr/offline/QR_03_von_7.png": "c9e6c9ac32fb8a6cbdf295a9c76ce3f065c5f9be8163ab476c93c12e9a7d3b5d",
+    "docs/qr/offline/QR_04_von_7.png": "59bb94c767e3701963649ffc42496ed301c66d47551040cb177102895525d803",
+    "docs/qr/offline/QR_05_von_7.png": "e60dbb5dd5fb399e5db85d4479a962f14bfc84a91e6d4c8341626472967108c2",
+    "docs/qr/offline/QR_06_von_7.png": "483afc96472eafbc44eb57c6fbb650e48713c8df20d8e3e65d2e4f438d07790d",
+    "docs/qr/offline/QR_07_von_7.png": "abd2110849fc7fe67a7b99c1b026784e1111c44c070c0824eddd0ad7ae32d0f0"
+  },
+  "notes": "v0.9.5 release files remain unchanged; v0.9.6 adds the external temperature probe."
 }
