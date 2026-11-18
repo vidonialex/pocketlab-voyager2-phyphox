@@ -35,15 +35,25 @@ Bei der zweisprachigen Experimentdatei richtet sich die Sprache nach der Sprache
 
 ## Messung durchführen
 
-1. Voyager 2 einschalten und Bluetooth am Smartphone aktivieren. Eine gegebenenfalls bestehende Verbindung zur PocketLab-App beenden.
-2. Das Experiment in phyphox öffnen und die Verbindung zum Voyager 2 herstellen.
-3. Die phyphox-Aufzeichnung über **▶** starten.
-4. Im Reiter **Sensorauswahl / Sensor Selection** die gewünschten Messgrößen aktivieren und **Messdaten STARTEN / START DATA** antippen.
-5. Die Zeitdiagramme unter **Bewegung / Motion** und **Umgebung / Weather** beobachten.
-6. Für einen Wechsel der Messgrößen zunächst **Messdaten STOPPEN / STOP DATA** auswählen, die Sensorauswahl ändern und den Datenstrom erneut starten.
-7. Nach der Messung den Datenstrom stoppen, die phyphox-Aufzeichnung pausieren und über das Exportmenü die Daten als CSV speichern.
+Vorbereitung: Voyager 2 einschalten, Bluetooth am Smartphone aktivieren und eine bestehende Verbindung zur PocketLab-App oder anderen Sensor-Apps beenden. Das Experiment in phyphox öffnen.
+
+1. Den Voyager 2 in phyphox über Bluetooth verbinden.
+2. Unter **Sensorauswahl / Sensor Selection** die gewünschten Sensoren auswählen.
+3. Die phyphox-Aufzeichnung mit **▶ oben rechts** starten.
+4. **Erst danach „Messdaten STARTEN / START DATA“ antippen.** Dieser Befehl setzt eine laufende phyphox-Aufzeichnung voraus. Jetzt die Messwerte und Zeitdiagramme unter **Bewegung / Motion** und **Umgebung / Weather** beobachten.
+5. **Sensorwechsel:** „Messdaten STOPPEN / STOP DATA“, neue Sensoren auswählen, wieder „Messdaten STARTEN / START DATA“. Die phyphox-Aufzeichnung bleibt dabei aktiv; falls sie pausiert wurde, zuvor wieder ▶ starten.
+6. **Beenden:** erst „Messdaten STOPPEN / STOP DATA“, danach phyphox pausieren.
+7. **Export:** **⋮ → Daten exportieren → CSV → speichern/teilen**.
 
 Die Reiter enthalten aufklappbare Hilfetexte. Der Reiter **Status** erläutert Verbindungsprobleme und mögliche Datenlücken.
+
+**NaN im CSV:** NaN bedeutet „Not a Number“. Insbesondere werden in der gemeinsamen CSV-Tabelle unterschiedlich lange Datenreihen mit NaN aufgefüllt. NaN ist nicht gleich null und nicht automatisch ein Sensordefekt; es kann auch einen fehlenden oder ungültigen Zahlenwert kennzeichnen. Verwende zur zeitlichen Zuordnung die **separate Zeitspalte jeder Messgröße**. Die gleiche Tabellenzeile bedeutet bei unterschiedlich langen Datenreihen nicht automatisch den gleichen Messzeitpunkt. NaN nicht ungeprüft durch null ersetzen.
+
+Bei mehreren Geräten hilft die Anleitung [Bluetooth-Gerätenamen und Nummerierung](docs/BLUETOOTH_GERAETENAMEN.md). Am **18.11.2026** wurden genau zwei Voyager 2 erfolgreich in `PL Voyager 2-01` und `PL Voyager 2-02` umbenannt und anschließend mit der bestehenden Integration verwendet. Beim ersten Gerät wurde der Name sofort, beim zweiten verzögert übernommen; ein Neustart scheint geholfen zu haben. Das Suchmuster `PL Voyager 2` bleibt unverändert. Die Erprobung umfasst nicht alle 14 Unterrichtsgeräte. Die Anleitung dokumentiert auch die Abweichung zwischen den angezeigten Namensregeln des Herstellerdialogs und den tatsächlich akzeptierten Namen, ohne allgemeine Namensregeln daraus abzuleiten.
+
+## Entwicklungstest der Bedienhinweise
+
+Separat benannte Testdateien auf Basis von v0.9.6 ergänzen die neue Reihenfolge und einen direkt sichtbaren START-Hinweis in phyphox: [Test Deutsch](docs/experiments/tests/Voyager2_Benutzerfuehrung_Test_DE.phyphox) · [Test Deutsch/Englisch](docs/experiments/tests/Voyager2_Benutzerfuehrung_Test_DE_EN.phyphox). **Die Benutzerführung wurde am 18.11.2026 mit zwei Voyager 2 erfolgreich erprobt.** Der qualitative Funktionstest wurde durch die testende Person bestätigt; er ist keine Kalibrierung oder Messunsicherheitsanalyse. Die Messlogik stammt unverändert aus v0.9.6; die veröffentlichten v0.9.6-Dateien und ihre QR-Pakete bleiben unverändert. Die Tests verwenden eigene Experimenttitel zur Unterscheidung von der veröffentlichten Version und sind weiterhin Entwicklungsstände.
 
 ## Verfügbare Messgrößen
 
@@ -68,7 +78,7 @@ Die neun Messarten lassen sich auch kombinieren und ergeben zusammen 15 Messkan�
 - **Anfangswerte:** Das erste passende Umwelt-Datenpaket wird nach Messbeginn verworfen, um beobachtete extreme Startwerte zu reduzieren. Weitere Einschwingeffekte sind möglich.
 - **Messgenauigkeit:** Im Projekt wurde bislang keine unabhängige Kalibrierung oder umfassende metrologische Validierung der Sensoren durchgeführt.
 - **Noch nicht integriert:** IR-Distanzmessung, weitere externe Fühler (z. B. Drucksonde) sowie Orientierung und andere abgeleitete Bewegungsgrößen.
-- **Kompatibilität:** Die praktische Erprobung erfolgte mit einem Voyager 2 und einem Android-Smartphone. Eine systematische Prüfung unterschiedlicher Geräte und Betriebssysteme steht aus.
+- **Kompatibilität:** Die ursprüngliche v0.9.6-Erprobung erfolgte mit einem Voyager 2 und einem Android-Smartphone. Am 18.11.2026 wurden Benutzerführung und Umbenennung mit genau zwei Voyager 2 erfolgreich erprobt. Eine Prüfung aller 14 Unterrichtsgeräte sowie eine systematische Prüfung unterschiedlicher Geräte und Betriebssysteme stehen aus.
 
 ## Verifikation
 
@@ -84,7 +94,9 @@ Die externe Temperatursonde wurde auf Android funktional getestet: einzeln, geme
 
 **Bestätigte Android-Abschlussprüfungen vom 15.11.2026:** Die endgültige deutsche und die zweisprachige v0.9.6-Experimentdatei wurden erfolgreich importiert und visuell geprüft. Alle acht korrigierten Offline-QR-Codes wurden erfolgreich in phyphox importiert. Die externe Temperatursonde ist in der Sensorauswahl und den Info-/Hilfetexten vorhanden; eine Temperaturmessung mit der externen Sonde war erfolgreich. Die gleichzeitige Erfassung aller neun Messgrößen war bereits zuvor erfolgreich getestet.
 
-Der Online-QR-Import und die Live-Prüfung der v0.9.6-Projektwebsite stehen bis nach einer gesondert freigegebenen Veröffentlichung aus. Die funktionalen Tests bestätigen keine unabhängige Kalibrierung oder metrologische Validierung.
+Die HTTP-Erreichbarkeit der veröffentlichten v0.9.6-Projektwebsite und ihrer Downloads wurde am 15.11.2026 geprüft. Der Online-QR-Import auf einem Android-Smartphone bleibt ein offener manueller Test. Die funktionalen Tests bestätigen keine unabhängige Kalibrierung oder metrologische Validierung.
+
+Neue Funktionen, Messergebnisse, technische Erkenntnisse und Bedienhinweise werden zeitnah in der jeweils betroffenen Projektdokumentation ergänzt. Eine vollständige sprachliche, stilistische und gestalterische Überarbeitung folgt separat und verzögert diese fachlichen Aktualisierungen nicht.
 
 ## Projektstatus
 

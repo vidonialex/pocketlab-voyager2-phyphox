@@ -66,15 +66,26 @@
  </section>
  <section class="card wide" id="anleitung">
    <h2>Messung durchführen</h2>
+   <p>Vorbereitung: Voyager 2 einschalten, Bluetooth aktivieren, die Verbindung zu anderen Sensor-Apps beenden und das Experiment in phyphox öffnen.</p>
    <ol>
-     <li>Voyager 2 einschalten, Bluetooth am Smartphone aktivieren und eine bestehende Verbindung zur PocketLab-App beenden.</li>
-     <li>Experiment in phyphox öffnen und den Voyager 2 verbinden.</li>
-     <li>Die phyphox-Aufzeichnung mit <strong>▶</strong> starten. Unter <strong>Sensorauswahl / Sensor Selection</strong> die gewünschten Messgrößen aktivieren und <strong>Messdaten STARTEN / START DATA</strong> antippen.</li>
-     <li>Die Diagramme unter <strong>Bewegung / Motion</strong> und <strong>Umgebung / Weather</strong> beobachten.</li>
-     <li>Zum Wechsel der Messgrößen <strong>Messdaten STOPPEN / STOP DATA</strong> wählen, die Sensorauswahl ändern und den Datenstrom wieder starten.</li>
-     <li>Nach der Messung den Datenstrom stoppen, die phyphox-Aufzeichnung pausieren und über das Exportmenü eine CSV-Datei speichern.</li>
+     <li>Den Voyager 2 in phyphox über Bluetooth verbinden.</li>
+     <li>Unter <strong>Sensorauswahl / Sensor Selection</strong> die gewünschten Sensoren auswählen.</li>
+     <li>Die phyphox-Aufzeichnung mit <strong>▶ oben rechts</strong> starten.</li>
+     <li><strong>Erst danach „Messdaten STARTEN / START DATA“ antippen.</strong> Dieser Befehl setzt eine laufende phyphox-Aufzeichnung voraus. Jetzt die Messwerte und Diagramme unter <strong>Bewegung / Motion</strong> und <strong>Umgebung / Weather</strong> beobachten.</li>
+     <li><strong>Sensorwechsel:</strong> „Messdaten STOPPEN / STOP DATA“, neue Sensoren auswählen, wieder „Messdaten STARTEN / START DATA“. Die phyphox-Aufzeichnung bleibt aktiv; falls sie pausiert wurde, zuvor wieder ▶ starten.</li>
+     <li><strong>Beenden:</strong> erst „Messdaten STOPPEN / STOP DATA“, danach phyphox pausieren.</li>
+     <li><strong>Export:</strong> ⋮ → Daten exportieren → CSV → speichern/teilen.</li>
    </ol>
+   <div class="notice"><strong>Startreihenfolge:</strong> Erst Sensoren auswählen, dann ▶ oben rechts, danach „Messdaten STARTEN“. Der Bluetooth-Startbefehl benötigt eine laufende phyphox-Aufzeichnung.</div>
+   <p><strong>NaN im CSV:</strong> „Not a Number“ kennzeichnet unter anderem Auffüllwerte unterschiedlich langer Datenreihen. NaN ist nicht gleich null und nicht automatisch ein Sensordefekt; auch fehlende oder ungültige Zahlenwerte können so erscheinen. Nutze die <strong>separate Zeitspalte jeder Messgröße</strong>, da dieselbe Tabellenzeile nicht automatisch denselben Messzeitpunkt bedeutet. NaN nicht ungeprüft durch null ersetzen.</p>
+   <p>Mehrere Geräte: <a href="BLUETOOTH_GERAETENAMEN.md">Bluetooth-Gerätenamen und Nummerierung</a>. Am <strong>18.11.2026</strong> wurden genau zwei Voyager 2 erfolgreich in <strong>PL Voyager 2-01</strong> und <strong>PL Voyager 2-02</strong> umbenannt und anschließend mit der bestehenden Integration verwendet. Die erste Namensübernahme war sofort, die zweite verzögert; ein Neustart scheint geholfen zu haben. Das Suchmuster <strong>PL Voyager 2</strong> bleibt unverändert. Die Erprobung umfasst nicht alle 14 Unterrichtsgeräte; Beobachtungen zum Herstellerdialog und zu verzögerten Anzeigen stehen in der Anleitung.</p>
    <div class="notice"><strong>Hinweis zur Zeitachse:</strong> Die Zeitpunkte werden aus BLE-Empfangszeiten und einer angenommenen Abtastrate von ungefähr 20 Hz abgeschätzt. Es handelt sich nicht um Hardware-Zeitstempel des Sensors. Während Verbindungsunterbrechungen entstehen Datenlücken.</div>
+ </section>
+ <section class="card wide" id="bedienungstest">
+   <h2>Entwicklungstest der Bedienhinweise</h2>
+   <p>Diese separat benannten Testexperimente auf Basis von v0.9.6 ergänzen die neue Reihenfolge und direkt sichtbare START-Hinweise in phyphox. <strong>Die Benutzerführung wurde am 18.11.2026 mit genau zwei Voyager 2 erfolgreich erprobt.</strong> Es handelt sich um einen durch die testende Person bestätigten qualitativen Funktionstest. Messlogik, BLE-Steuerung, Diagramme und CSV-Konfiguration sind unverändert; die Testexperimente bleiben Entwicklungsstände.</p>
+   <p><a href="experiments/tests/Voyager2_Benutzerfuehrung_Test_DE.phyphox" download>Testdatei Deutsch</a> · <a href="experiments/tests/Voyager2_Benutzerfuehrung_Test_DE_EN.phyphox" download>Testdatei Deutsch/Englisch</a></p>
+   <p class="note">Die veröffentlichten v0.9.6-Downloads und QR-Pakete bleiben unverändert. Die Testexperimente sind durch eigene Titel erkennbar.</p>
  </section>
  <section class="card wide" id="messgroessen">
    <h2>Erfasste Messgrößen</h2>
@@ -84,7 +95,7 @@
  <section class="card wide" id="grenzen">
    <h2>Stand der Erprobung und Einschränkungen</h2>
    <p>Die BLE-Steuerung, dynamische Sensorauswahl, Messwertdarstellung und der CSV-Export wurden mit einem PocketLab Voyager 2 und einem Android-Smartphone praktisch getestet. Die externe Temperatursonde wurde einzeln, gemeinsam mit interner Temperatur, gemeinsam mit Beschleunigung und mit allen neun Messgrößen funktional getestet.</p>
-   <p><strong>Bestätigte Android-Abschlussprüfungen vom 15.11.2026:</strong> Die endgültige deutsche und die zweisprachige v0.9.6-Experimentdatei wurden erfolgreich importiert und visuell geprüft. Alle acht korrigierten Offline-QR-Codes wurden erfolgreich in phyphox importiert. Die externe Temperatursonde ist in Sensorauswahl und Info-/Hilfetexten vorhanden; eine Temperaturmessung mit der Sonde war erfolgreich. Die gleichzeitige Erfassung aller neun Messgrößen war bereits zuvor erfolgreich getestet. Der Online-QR-Import und die Live-Prüfung der v0.9.6-Webseite stehen bis nach der Veröffentlichung aus.</p>
+   <p><strong>Bestätigte Android-Abschlussprüfungen vom 15.11.2026:</strong> Die endgültige deutsche und die zweisprachige v0.9.6-Experimentdatei wurden erfolgreich importiert und visuell geprüft. Alle acht korrigierten Offline-QR-Codes wurden erfolgreich in phyphox importiert. Die externe Temperatursonde ist in Sensorauswahl und Info-/Hilfetexten vorhanden; eine Temperaturmessung mit der Sonde war erfolgreich. Die gleichzeitige Erfassung aller neun Messgrößen war bereits zuvor erfolgreich getestet. Die veröffentlichte Website und ihre Downloads wurden am 15.11.2026 per HTTP geprüft; der Online-QR-Import auf Android bleibt ein offener manueller Test.</p>
    <p>Eine unabhängige Kalibrierung und eine systematische Untersuchung der Messunsicherheit gehören bisher nicht zum Testumfang. Beim Start können Einschwingwerte auftreten. Die externe Temperatursonde wurde auf Android einzeln und in Kombination mit den acht bestehenden Messgrößen getestet. IR-Distanzmessung und weitere externe Fühler fehlen weiterhin.</p>
  </section>
 </div>
