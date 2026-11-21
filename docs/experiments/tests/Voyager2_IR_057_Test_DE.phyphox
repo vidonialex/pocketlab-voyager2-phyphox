@@ -1,0 +1,261 @@
+<?xml version='1.0' encoding='utf-8'?>
+<phyphox version="1.20" locale="de">
+  <title>PocketLab Voyager 2 – IR-Test 057 (isoliert)</title>
+  <category>PocketLab Voyager 2 – Entwicklungstests</category>
+  <color>FF7100</color>
+  <description>Isolierter IR-Entfernungstest 057. Nur der Rangefinder wird aktiviert; keine Integration in die gemeinsame Sensorauswahl. Diese phyphox-Testdatei muss noch auf Android erprobt werden.
+
+Bedienung: Bluetooth verbinden, ▶ oben rechts starten, danach Messdaten STARTEN. Zum Beenden erst Messdaten STOPPEN, danach phyphox pausieren. Export: ⋮ → Daten exportieren → CSV → speichern/teilen.
+
+Entfernung in Metern; drei Float32-Little-Endian-Werte pro passender Notification. Zeitwerte werden aus BLE-Empfangszeit und angenommenen 20 Hz geschätzt und monotonisiert; keine Hardware-Zeitstempel. Es werden keine Messwerte interpoliert oder durch null ersetzt.
+
+Beobachtung aus Experiment 057 am 18.11.2026: 672 Notifications mit 2.016 Werten in etwa 100,6 s; plausible kontinuierliche Reaktion auf Bewegung zur Wand und zurück. Einige Anfangswerte waren negativ oder ungefähr 8,191 m. Ihre Bedeutung ist ungeklärt; keine bestätigten Fehlercodes. Dieser Test erhält alle Werte passender Pakete ohne Startwertfilter. Keine unabhängige Kalibrierung, Messunsicherheitsanalyse oder Langzeitvalidierung.</description>
+  <data-containers>
+    <container size="12000">distance</container>
+    <container size="12000">t_ir</container>
+    <container size="48">packet_words</container>
+    <container size="1">header_0</container>
+    <container size="1">header_1</container>
+    <container size="1">header_2</container>
+    <container size="1">header_3</container>
+    <container size="1">header_4</container>
+    <container size="1">header_5</container>
+    <container size="1">ble_rx_time</container>
+    <container size="1" init="-1" clearGroup="_">last_action</container>
+    <container size="1" init="110" clearGroup="_">mask_0</container>
+    <container size="1" init="0" clearGroup="_">mask_1</container>
+    <container size="1" init="0" clearGroup="_">mask_2</container>
+    <container size="1" init="0" clearGroup="_">mask_3</container>
+    <container size="1" init="1" clearGroup="_">mask_4</container>
+    <container size="1" init="110" clearGroup="_">stop_0</container>
+    <container size="1" init="0" clearGroup="_">stop_1</container>
+    <container size="1" init="0" clearGroup="_">stop_2</container>
+    <container size="1" init="0" clearGroup="_">stop_3</container>
+    <container size="1" init="0" clearGroup="_">stop_4</container>
+    <container size="48">valid0</container>
+    <container size="48">valid1</container>
+    <container size="48">valid2</container>
+    <container size="48">valid3</container>
+    <container size="48">valid4</container>
+    <container size="48">valid5</container>
+    <container size="48">valid_packet_words</container>
+    <container size="1">packet_word_count</container>
+    <container size="1">validated_word_count</container>
+    <container size="1">rx_time_start_corrected</container>
+    <container size="1">num_ir</container>
+    <container size="1" init="3" clearGroup="_">expected_words</container>
+    <container size="1" init="-0.05">last_valid_time</container>
+    <container size="1">rx_offset_0</container>
+    <container size="1">rx_valid_0</container>
+    <container size="1">rx_offset_1</container>
+    <container size="1">rx_valid_1</container>
+    <container size="1">rx_offset_2</container>
+    <container size="1">rx_valid_2</container>
+    <container size="3">rx_valid_triplet</container>
+  </data-containers>
+  <input>
+    <bluetooth name="PL Voyager 2" id="voyager2" mode="notification" autoConnect="false" mtu="247">
+      <output char="152fdea6-28a1-11ed-a261-0242ac120002" conversion="uInt8" offset="0" length="1">header_0</output>
+      <output char="152fdea6-28a1-11ed-a261-0242ac120002" conversion="uInt8" offset="1" length="1">header_1</output>
+      <output char="152fdea6-28a1-11ed-a261-0242ac120002" conversion="uInt8" offset="2" length="1">header_2</output>
+      <output char="152fdea6-28a1-11ed-a261-0242ac120002" conversion="uInt8" offset="3" length="1">header_3</output>
+      <output char="152fdea6-28a1-11ed-a261-0242ac120002" conversion="uInt8" offset="4" length="1">header_4</output>
+      <output char="152fdea6-28a1-11ed-a261-0242ac120002" conversion="uInt8" offset="5" length="1">header_5</output>
+      <output char="152fdea6-28a1-11ed-a261-0242ac120002" extra="time">ble_rx_time</output>
+      <output char="152fdea6-28a1-11ed-a261-0242ac120002" conversion="float32LittleEndian" offset="6" repeating="4">packet_words</output>
+      <config char="152fdea5-28a1-11ed-a261-0242ac120002" conversion="hexadecimal">23</config>
+      <config char="152fdea5-28a1-11ed-a261-0242ac120002" conversion="hexadecimal">60 01</config>
+      <config char="152fdea5-28a1-11ed-a261-0242ac120002" conversion="hexadecimal">78 03</config>
+      <config char="152fdea5-28a1-11ed-a261-0242ac120002" conversion="hexadecimal">7C 00</config>
+      <config char="152fdea5-28a1-11ed-a261-0242ac120002" conversion="hexadecimal">70 96 00 03 00</config>
+      <config char="152fdea5-28a1-11ed-a261-0242ac120002" conversion="hexadecimal">6E 00 00 00 00</config>
+    </bluetooth>
+  </input>
+  <output>
+    <bluetooth id="voyager2" name="PL Voyager 2" autoConnect="false" mtu="247">
+      <input char="152fdea5-28a1-11ed-a261-0242ac120002" conversion="uInt8" offset="0" triggerId="apply_selection">mask_0</input>
+      <input char="152fdea5-28a1-11ed-a261-0242ac120002" conversion="uInt8" offset="1" triggerId="apply_selection">mask_1</input>
+      <input char="152fdea5-28a1-11ed-a261-0242ac120002" conversion="uInt8" offset="2" triggerId="apply_selection">mask_2</input>
+      <input char="152fdea5-28a1-11ed-a261-0242ac120002" conversion="uInt8" offset="3" triggerId="apply_selection">mask_3</input>
+      <input char="152fdea5-28a1-11ed-a261-0242ac120002" conversion="uInt8" offset="4" triggerId="apply_selection">mask_4</input>
+    </bluetooth>
+    <bluetooth id="voyager2" name="PL Voyager 2" autoConnect="false" mtu="247">
+      <input char="152fdea5-28a1-11ed-a261-0242ac120002" conversion="uInt8" offset="0" triggerId="all_stop">stop_0</input>
+      <input char="152fdea5-28a1-11ed-a261-0242ac120002" conversion="uInt8" offset="1" triggerId="all_stop">stop_1</input>
+      <input char="152fdea5-28a1-11ed-a261-0242ac120002" conversion="uInt8" offset="2" triggerId="all_stop">stop_2</input>
+      <input char="152fdea5-28a1-11ed-a261-0242ac120002" conversion="uInt8" offset="3" triggerId="all_stop">stop_3</input>
+      <input char="152fdea5-28a1-11ed-a261-0242ac120002" conversion="uInt8" offset="4" triggerId="all_stop">stop_4</input>
+    </bluetooth>
+  </output>
+  <analysis sleep="0.025">
+    <count>
+      <input as="buffer" keep="true">packet_words</input>
+      <output as="count">packet_word_count</output>
+    </count>
+    <if equal="true">
+      <input as="a" keep="true">header_0</input>
+      <input as="b" type="value">153</input>
+      <input as="true" keep="true">packet_words</input>
+      <input as="false" type="empty" />
+      <output as="result">valid0</output>
+    </if>
+    <if equal="true">
+      <input as="a" keep="true">header_1</input>
+      <input as="b" keep="true">mask_1</input>
+      <input as="true" keep="true">valid0</input>
+      <input as="false" type="empty" />
+      <output as="result">valid1</output>
+    </if>
+    <if equal="true">
+      <input as="a" keep="true">header_2</input>
+      <input as="b" keep="true">mask_2</input>
+      <input as="true" keep="true">valid1</input>
+      <input as="false" type="empty" />
+      <output as="result">valid2</output>
+    </if>
+    <if equal="true">
+      <input as="a" keep="true">header_3</input>
+      <input as="b" keep="true">mask_3</input>
+      <input as="true" keep="true">valid2</input>
+      <input as="false" type="empty" />
+      <output as="result">valid3</output>
+    </if>
+    <if equal="true">
+      <input as="a" keep="true">header_4</input>
+      <input as="b" keep="true">mask_4</input>
+      <input as="true" keep="true">valid3</input>
+      <input as="false" type="empty" />
+      <output as="result">valid4</output>
+    </if>
+    <if equal="true">
+      <input as="a" keep="true">header_5</input>
+      <input as="b" type="value">0</input>
+      <input as="true" keep="true">valid4</input>
+      <input as="false" type="empty" />
+      <output as="result">valid5</output>
+    </if>
+    <if equal="true">
+      <input as="a" keep="true">packet_word_count</input>
+      <input as="b" keep="true">expected_words</input>
+      <input as="true" keep="true">valid5</input>
+      <input as="false" type="empty" />
+      <output as="result">valid_packet_words</output>
+    </if>
+    <count>
+      <input as="buffer" keep="true">valid_packet_words</input>
+      <output as="count">validated_word_count</output>
+    </count>
+    <formula formula="max([1]-0.10,[2]+0.05)">
+      <input as="in" keep="true">ble_rx_time</input>
+      <input as="in" keep="true">last_valid_time</input>
+      <output>rx_time_start_corrected</output>
+    </formula>
+    <formula formula="[1]">
+      <input as="in" keep="true">rx_time_start_corrected</input>
+      <output as="out">rx_offset_0</output>
+    </formula>
+    <if greater="true">
+      <input as="a" keep="true">validated_word_count</input>
+      <input as="b" type="value">0</input>
+      <input as="true">rx_offset_0</input>
+      <input as="false" type="empty" />
+      <output as="result">rx_valid_0</output>
+    </if>
+    <formula formula="[1]+0.05">
+      <input as="in" keep="true">rx_time_start_corrected</input>
+      <output as="out">rx_offset_1</output>
+    </formula>
+    <if greater="true">
+      <input as="a" keep="true">validated_word_count</input>
+      <input as="b" type="value">0</input>
+      <input as="true">rx_offset_1</input>
+      <input as="false" type="empty" />
+      <output as="result">rx_valid_1</output>
+    </if>
+    <formula formula="[1]+0.10">
+      <input as="in" keep="true">rx_time_start_corrected</input>
+      <output as="out">rx_offset_2</output>
+    </formula>
+    <if greater="true">
+      <input as="a" keep="true">validated_word_count</input>
+      <input as="b" type="value">0</input>
+      <input as="true">rx_offset_2</input>
+      <input as="false" type="empty" />
+      <output as="result">rx_valid_2</output>
+    </if>
+    <append>
+      <input as="in">rx_valid_0</input>
+      <input as="in">rx_valid_1</input>
+      <input as="in">rx_valid_2</input>
+      <output as="out">rx_valid_triplet</output>
+    </append>
+    <append>
+      <input as="in" keep="true">rx_valid_triplet</input>
+      <output as="out" append="true">last_valid_time</output>
+    </append>
+    <append>
+      <input as="in">valid_packet_words</input>
+      <output as="out" append="true">distance</output>
+    </append>
+    <append>
+      <input as="in">rx_valid_triplet</input>
+      <output as="out" append="true">t_ir</output>
+    </append>
+    <count>
+      <input as="buffer" keep="true">distance</input>
+      <output as="count">num_ir</output>
+    </count>
+  </analysis>
+  <views>
+    <view label="IR-Messung">
+      <info label="Zuerst Bluetooth verbinden und ▶ oben rechts starten." bold="true" color="orange" />
+      <info label="Erst danach „Messdaten STARTEN“ – nur bei laufender phyphox-Aufzeichnung." bold="true" color="orange" />
+      <info label="Dieser isolierte Test aktiviert ausschließlich den IR-Entfernungssensor. Die gemeinsame Sensorauswahl bleibt unverändert." />
+      <button label="Messdaten STARTEN">
+        <input type="value">1</input>
+        <output>last_action</output>
+        <trigger>apply_selection</trigger>
+      </button>
+      <button label="Messdaten STOPPEN">
+        <input type="value">0</input>
+        <output>last_action</output>
+        <trigger>all_stop</trigger>
+      </button>
+      <value label="Entfernung" unit="m" precision="3">
+        <input>distance</input>
+      </value>
+      <graph label="IR-Entfernung" labelX="Zeit (geschätzt)" labelY="Entfernung" unitX="s" unitY="m" timeOnX="true" partialUpdate="false">
+        <input axis="x">t_ir</input>
+        <input axis="y">distance</input>
+      </graph>
+      <info label="Beenden: erst „Messdaten STOPPEN“, danach phyphox oben rechts pausieren. Export: ⋮ → Daten exportieren → CSV → speichern/teilen." />
+      <info label="Negative Anfangswerte und etwa 8,191 m wurden beobachtet. Bedeutung ungeklärt; Werte werden nicht entfernt oder als Fehlercodes interpretiert." />
+    </view>
+    <view label="Hinweise und Status">
+      <info label="Drei Float32-Werte je passender Notification werden in ihrer empfangenen Reihenfolge als Entfernung in m übernommen." />
+      <info label="Nur Pakete mit Header 99 00 00 00 01 00 und genau drei Float32-Werten werden übernommen. Andere Header oder Wortzahlen werden als nicht passende Pakete verworfen; keine Filterung nach dem Zahlenwert." />
+      <info label="Zeitbasis wie im v0.9.6-Prototyp: Empfangszeit minus 0,10 s, plus 0,05 s je Folgewert, bei Bedarf monotonisiert. Keine Hardware-Zeitstempel und kein Nachweis exakter 20 Hz." />
+      <info label="Bei einer Bluetooth-Unterbrechung fehlen Daten. Wiederverbinden, gegebenenfalls ▶ starten und danach erneut „Messdaten STARTEN“ antippen." />
+      <info label="NaN bedeutet „Not a Number“, nicht null und nicht automatisch Sensordefekt. Zeit und Entfernung müssen je drei neue Werte pro akzeptiertem Paket erhalten. Ungleiche CSV-Spaltenlängen bitte als Befund dokumentieren." />
+      <info label="Die Messpuffer halten höchstens 12.000 Werte, bei etwa 20 Hz ungefähr zehn Minuten. Vor längeren Versuchen exportieren. Diese Testdatei ist auf Android noch nicht geprüft; keine Kalibrierung oder Langzeitvalidierung." />
+      <value label="Letzte Aktion: 1=Start, 0=Stopp" precision="0">
+        <input>last_action</input>
+      </value>
+      <value label="Float32-Werte im empfangenen Paket" precision="0">
+        <input>packet_word_count</input>
+      </value>
+      <value label="Float32-Werte nach Paketprüfung" precision="0">
+        <input>validated_word_count</input>
+      </value>
+      <value label="Gespeicherte Entfernungswerte (Puffer)" precision="0">
+        <input>num_ir</input>
+      </value>
+    </view>
+  </views>
+  <export>
+    <set name="Voyager 2 – IR-Entfernung 057">
+      <data name="Zeit (s, geschätzt)">t_ir</data>
+      <data name="IR-Entfernung (m)">distance</data>
+    </set>
+  </export>
+</phyphox>

@@ -30,73 +30,91 @@
 <body>
 <div class="wrap">
 <header>
-  <div class="eyebrow">Bachelorprojekt Physik · Experimentelle Integration · v0.9.6</div>
+  <div class="eyebrow">Bachelorprojekt Physik · v0.9.7 · Android-Funktionstests bestanden</div>
   <h1>PocketLab Voyager 2 in phyphox</h1>
   <p class="lead">Das PocketLab Voyager 2 über Bluetooth Low Energy mit phyphox verbinden, Messgrößen einzeln oder kombiniert erfassen und die Daten als CSV exportieren. Hier stehen die Experimentdateien und die Installationsanleitungen bereit.</p>
   <nav aria-label="Seiteninhalt"><a href="#download">Dateidownload</a><a href="#online">Online-QR</a><a href="#offline">Offline-QR</a><a href="#anleitung">Messanleitung</a><a href="#messgroessen">Messgrößen</a><a href="#grenzen">Einschränkungen</a></nav>
 </header>
 <main>
 <div class="grid">
+ <div class="notice wide"><strong>v0.9.7 – Android-Freigabetests abgeschlossen:</strong> Am 21.11.2026 wurden beide aktuellen Sprachdateien erfolgreich importiert, Bedienhinweise beziehungsweise Übersetzungen geprüft und Messungen durchgeführt. Die Wiederaufnahme STOPP → Pause → ▶ → STARTEN und der Import aller <strong>13 aktuellen Offline-QR-Segmente</strong> mit anschließender IR-Messung waren erfolgreich. Online-QR-Live-Prüfung, HTTP-/Pages-Prüfung sowie die weiteren Veröffentlichungsschritte stehen noch aus. Versionstag und GitHub-Release erfolgen separat.</div>
  <section class="card" id="download">
    <h2><span class="accent">01</span> Direkter Download</h2>
    <p>Speichere die gewünschte Experimentdatei auf dem Smartphone und öffne oder importiere sie anschließend in phyphox.</p>
-   <a class="btn" href="experiments/Voyager2_v096_DE.phyphox" download>Deutsch herunterladen</a>
-   <a class="btn secondary" href="experiments/Voyager2_v096_DE_EN.phyphox" download>Deutsch + Englisch</a>
+   <a class="btn" href="experiments/Voyager2_v097_DE.phyphox" download>Deutsch herunterladen</a>
+   <a class="btn secondary" href="experiments/Voyager2_v097_DE_EN.phyphox" download>Deutsch + Englisch</a>
    <p class="note">Voraussetzungen: Voyager 2, ein Android-Smartphone mit Bluetooth und die phyphox-App. Die zweisprachige Datei verwendet die eingestellte App- beziehungsweise Gerätesprache.</p>
+   <p class="note">Veröffentlichte v0.9.6, unverändert: <a href="experiments/Voyager2_v096_DE.phyphox">Deutsch</a> · <a href="experiments/Voyager2_v096_DE_EN.phyphox">Deutsch/Englisch</a> · <a href="qr/online_v096.png">Online-QR</a> · <a href="downloads/Voyager2_v096_Offline_QR_DE.zip">Offline-QR-Paket (acht Codes)</a>.</p>
    <p class="note">Frühere Ausgabe v0.9.5: <a href="experiments/Voyager2_v095_DE.phyphox">Deutsch</a> · <a href="experiments/Voyager2_v095_DE_EN.phyphox">Deutsch/Englisch</a> · <a href="downloads/Voyager2_v095_Offline_QR_DE.zip">Offline-QR-Paket</a>.</p>
  </section>
  <section class="card" id="online">
    <h2><span class="accent">02</span> Online-QR-Code</h2>
    <div class="qr-row">
-      <img class="qrbig" src="qr/online_v096.png" alt="Online-QR-Code für die zweisprachige phyphox-Datei" width="250" height="250">
+      <img class="qrbig" src="qr/online_v097.png" alt="Online-QR-Code für die zweisprachige phyphox-Datei" width="250" height="250">
       <div class="qr-copy"><p>Öffne den QR-Scanner im phyphox-Hauptmenü und scanne diesen Code. phyphox lädt damit die zweisprachige Experimentdatei. Das Smartphone benötigt für diesen Import eine Internetverbindung.</p>
-      <p><a href="experiments/Voyager2_v096_DE_EN.phyphox">Direkt zur zweisprachigen Experimentdatei</a></p>
+      <p><a href="experiments/Voyager2_v097_DE_EN.phyphox">Direkt zur zweisprachigen Experimentdatei</a></p>
       <p class="note">Der Code enthält einen Verweis auf die auf dieser Seite bereitgestellte .phyphox-Datei.</p></div>
    </div>
  </section>
  <section class="card wide" id="offline">
-   <h2><span class="accent">03</span> Deutsch – Offline-QR-Codes (8 Stück)</h2>
-   <p>Lade das QR-Paket vorab herunter oder öffne die Codes auf einem zweiten Bildschirm. Scanne anschließend alle 8 nummerierten Codes nacheinander mit dem phyphox-QR-Scanner. Der Import selbst benötigt keine Internetverbindung; die Messung verwendet weiterhin Bluetooth.</p>
+   <h2><span class="accent">03</span> Deutsch – Offline-QR-Codes (13 Stück)</h2>
+   <p>Lade das QR-Paket vorab herunter oder öffne die Codes auf einem zweiten Bildschirm. Scanne anschließend alle 13 nummerierten Codes nacheinander mit dem phyphox-QR-Scanner. Der Import selbst benötigt keine Internetverbindung; die Messung verwendet weiterhin Bluetooth.</p>
    <div class="viewer">
-      <div class="stepinfo" aria-live="polite" id="qr-counter">Code 1 von 8</div>
-      <img id="offline-code" class="offline-img" src="qr/offline/v096/QR_01_von_8.png" alt="Offline-QR-Code 1 von 8" width="370" height="370">
+      <div class="stepinfo" aria-live="polite" id="qr-counter">Code 1 von 13</div>
+      <img id="offline-code" class="offline-img" src="qr/offline/v097/QR_01_von_13.png" alt="Offline-QR-Code 1 von 13" width="370" height="370">
       <div class="controls"><button type="button" id="prev">Zurück</button><button type="button" id="next">Weiter</button></div>
    </div>
-   <p style="margin-top:18px"><a class="btn secondary" href="downloads/Voyager2_v096_Offline_QR_DE.zip" download>Alle Offline-QR-Codes als ZIP</a></p>
+   <p style="margin-top:18px"><a class="btn secondary" href="downloads/Voyager2_v097_Offline_QR_DE.zip" download>Alle Offline-QR-Codes als ZIP</a></p>
  </section>
  <section class="card wide" id="anleitung">
    <h2>Messung durchführen</h2>
+   <p>Vorbereitung: Voyager 2 einschalten, Bluetooth aktivieren, die Verbindung zu anderen Sensor-Apps beenden und das Experiment in phyphox öffnen.</p>
    <ol>
-     <li>Voyager 2 einschalten, Bluetooth am Smartphone aktivieren und eine bestehende Verbindung zur PocketLab-App beenden.</li>
-     <li>Experiment in phyphox öffnen und den Voyager 2 verbinden.</li>
-     <li>Die phyphox-Aufzeichnung mit <strong>▶</strong> starten. Unter <strong>Sensorauswahl / Sensor Selection</strong> die gewünschten Messgrößen aktivieren und <strong>Messdaten STARTEN / START DATA</strong> antippen.</li>
-     <li>Die Diagramme unter <strong>Bewegung / Motion</strong> und <strong>Umgebung / Weather</strong> beobachten.</li>
-     <li>Zum Wechsel der Messgrößen <strong>Messdaten STOPPEN / STOP DATA</strong> wählen, die Sensorauswahl ändern und den Datenstrom wieder starten.</li>
-     <li>Nach der Messung den Datenstrom stoppen, die phyphox-Aufzeichnung pausieren und über das Exportmenü eine CSV-Datei speichern.</li>
+     <li>Den Voyager 2 in phyphox über Bluetooth verbinden.</li>
+     <li>Unter <strong>Sensorauswahl / Sensor Selection</strong> die gewünschten Sensoren auswählen.</li>
+     <li>Die phyphox-Aufzeichnung mit <strong>▶ oben rechts</strong> starten.</li>
+     <li><strong>Danach „Messdaten STARTEN / START DATA“ antippen (empfohlen).</strong> Diesen Ablauf auch beim Wiederaufnehmen nach einer Pause verwenden. Jetzt die Messwerte und Diagramme unter <strong>Bewegung / Motion</strong> und <strong>Umgebung / Weather</strong> beobachten.</li>
+     <li><strong>Sensorwechsel:</strong> „Messdaten STOPPEN / STOP DATA“, neue Sensoren auswählen, wieder „Messdaten STARTEN / START DATA“. Die phyphox-Aufzeichnung bleibt aktiv; falls sie pausiert wurde, auch wieder ▶ starten.</li>
+     <li><strong>Beenden:</strong> erst „Messdaten STOPPEN / STOP DATA“, danach phyphox pausieren.</li>
+     <li><strong>Export:</strong> ⋮ → Daten exportieren → CSV → speichern/teilen.</li>
    </ol>
+   <div class="notice"><strong>Startreihenfolge:</strong> Empfohlen: Sensoren auswählen, dann ▶ oben rechts, danach „Messdaten STARTEN“. STARTEN vor ▶ funktionierte beim erstmaligen Messstart, nach dem Pausieren und Wiederaufnehmen jedoch nicht zuverlässig. Die Ursache ist nicht abschließend geklärt. Deshalb empfehlen wir immer ▶ → „Messdaten STARTEN“.</div>
+   <p><strong>NaN im CSV:</strong> „Not a Number“ kennzeichnet unter anderem Auffüllwerte unterschiedlich langer Datenreihen. NaN ist nicht gleich null und nicht automatisch ein Sensordefekt; auch fehlende oder ungültige Zahlenwerte können so erscheinen. Nutze die <strong>separate Zeitspalte jeder Messgröße</strong>, da dieselbe Tabellenzeile nicht automatisch denselben Messzeitpunkt bedeutet. NaN nicht ungeprüft durch null ersetzen.</p>
+   <p>Mehrere Geräte: <a href="BLUETOOTH_GERAETENAMEN.md">Bluetooth-Gerätenamen und Nummerierung</a>. Am <strong>18.11.2026</strong> wurden genau zwei Voyager 2 erfolgreich in <strong>PL Voyager 2-01</strong> und <strong>PL Voyager 2-02</strong> umbenannt und anschließend mit der bestehenden Integration verwendet. Die erste Namensübernahme war sofort, die zweite verzögert; ein Neustart scheint geholfen zu haben. Das Suchmuster <strong>PL Voyager 2</strong> bleibt unverändert. Die Erprobung umfasst nicht alle 14 Unterrichtsgeräte; Beobachtungen zum Herstellerdialog und zu verzögerten Anzeigen stehen in der Anleitung.</p>
    <div class="notice"><strong>Hinweis zur Zeitachse:</strong> Die Zeitpunkte werden aus BLE-Empfangszeiten und einer angenommenen Abtastrate von ungefähr 20 Hz abgeschätzt. Es handelt sich nicht um Hardware-Zeitstempel des Sensors. Während Verbindungsunterbrechungen entstehen Datenlücken.</div>
+ </section>
+ <section class="card wide" id="bedienungstest">
+   <h2>Entwicklungstest der Bedienhinweise</h2>
+   <p>Diese separat benannten Testexperimente auf Basis von v0.9.6 ergänzen die neue Reihenfolge und direkt sichtbare START-Hinweise in phyphox. <strong>Die Benutzerführung wurde am 18.11.2026 mit genau zwei Voyager 2 erfolgreich erprobt.</strong> Es handelt sich um einen durch die testende Person bestätigten qualitativen Funktionstest. Messlogik, BLE-Steuerung, Diagramme und CSV-Konfiguration sind unverändert; die Testexperimente bleiben Entwicklungsstände.</p>
+   <p><a href="experiments/tests/Voyager2_Benutzerfuehrung_Test_DE.phyphox" download>Testdatei Deutsch</a> · <a href="experiments/tests/Voyager2_Benutzerfuehrung_Test_DE_EN.phyphox" download>Testdatei Deutsch/Englisch</a></p>
+   <p class="note">Die veröffentlichten v0.9.5- und v0.9.6-Downloads und QR-Pakete bleiben unverändert. Die Testexperimente sind durch eigene Titel erkennbar.</p>
+   <p><strong>Experiment 057.5:</strong> <a href="IR_RANGEFINDER_057.md">IR-Entwicklung, Pufferfehler und erfolgreiche Integration</a>. Die ursprüngliche isolierte Datei zeigte keine IR-Werte; Debug01 korrigiert den fehlenden Pufferverbrauch und wurde anschließend erfolgreich auf Android getestet. Auch die gemeinsame Zehnfach-Auswahl hat die Tests vom 19.11.2026 bestanden. <a href="experiments/tests/Voyager2_Sensorwahl_10_IR_057_Test_DE.phyphox">Getesteter Stand DE</a> · <a href="experiments/tests/Voyager2_Sensorwahl_10_IR_057_Test_DE_EN.phyphox">Getesteter Stand DE/EN</a>. Die getesteten Dateien bleiben unverändert.</p>
  </section>
  <section class="card wide" id="messgroessen">
    <h2>Erfasste Messgrößen</h2>
-   <p>Beschleunigung (m/s²), Winkelgeschwindigkeit (rad/s) und Magnetfeld (µT) werden jeweils in drei Raumachsen aufgezeichnet. Hinzu kommen interne Temperatur und externe Temperatursonde (jeweils °C), barometrischer Druck (hPa in der Anzeige, Pa im CSV-Export), relative Luftfeuchtigkeit (%), Hitzeindex (°C) und Umgebungslichtintensität (lx).</p>
-   <p>Die neun Messarten sind einzeln oder gleichzeitig auswählbar und ergeben zusammen 15 Messkanäle. Die Zeitdiagramme und der CSV-Export dienen der anschließenden Auswertung.</p>
+   <p>Beschleunigung (m/s²), Winkelgeschwindigkeit (rad/s) und Magnetfeld (µT) werden jeweils in drei Raumachsen aufgezeichnet. Hinzu kommen interne Temperatur und externe Temperatursonde (jeweils °C), barometrischer Druck (hPa in der Anzeige, Pa im CSV-Export), relative Luftfeuchtigkeit (%), Hitzeindex (°C), Umgebungslichtintensität (lx) und IR-Entfernung (m). Der angegebene IR-Messbereich beträgt 0,001–6,0 m; die feste Diagrammachse 0–6 m begrenzt nur die Anzeige, nicht Wertanzeige oder CSV-Rohwerte.</p>
+   <p>Die zehn Messgrößen sind einzeln oder gleichzeitig auswählbar und ergeben zusammen 16 numerische Messkanäle. Mit zehn separaten geschätzten Zeitspalten enthält der CSV-Export 26 Spalten.</p>
  </section>
  <section class="card wide" id="grenzen">
    <h2>Stand der Erprobung und Einschränkungen</h2>
    <p>Die BLE-Steuerung, dynamische Sensorauswahl, Messwertdarstellung und der CSV-Export wurden mit einem PocketLab Voyager 2 und einem Android-Smartphone praktisch getestet. Die externe Temperatursonde wurde einzeln, gemeinsam mit interner Temperatur, gemeinsam mit Beschleunigung und mit allen neun Messgrößen funktional getestet.</p>
-   <p><strong>Bestätigte Android-Abschlussprüfungen vom 15.11.2026:</strong> Die endgültige deutsche und die zweisprachige v0.9.6-Experimentdatei wurden erfolgreich importiert und visuell geprüft. Alle acht korrigierten Offline-QR-Codes wurden erfolgreich in phyphox importiert. Die externe Temperatursonde ist in Sensorauswahl und Info-/Hilfetexten vorhanden; eine Temperaturmessung mit der Sonde war erfolgreich. Die gleichzeitige Erfassung aller neun Messgrößen war bereits zuvor erfolgreich getestet. Der Online-QR-Import und die Live-Prüfung der v0.9.6-Webseite stehen bis nach der Veröffentlichung aus.</p>
-   <p>Eine unabhängige Kalibrierung und eine systematische Untersuchung der Messunsicherheit gehören bisher nicht zum Testumfang. Beim Start können Einschwingwerte auftreten. Die externe Temperatursonde wurde auf Android einzeln und in Kombination mit den acht bestehenden Messgrößen getestet. IR-Distanzmessung und weitere externe Fühler fehlen weiterhin.</p>
+   <p><strong>Bestätigte Android-Abschlussprüfungen vom 15.11.2026:</strong> Die endgültige deutsche und die zweisprachige v0.9.6-Experimentdatei wurden erfolgreich importiert und visuell geprüft. Alle acht korrigierten Offline-QR-Codes wurden erfolgreich in phyphox importiert. Die externe Temperatursonde ist in Sensorauswahl und Info-/Hilfetexten vorhanden; eine Temperaturmessung mit der Sonde war erfolgreich. Die gleichzeitige Erfassung aller neun Messgrößen war bereits zuvor erfolgreich getestet. Die veröffentlichte Website und ihre Downloads wurden am 15.11.2026 per HTTP geprüft; der Online-QR-Import auf Android bleibt ein offener manueller Test.</p>
+   <p><strong>Android-Funktionstests vom 19.11.2026, Experiment 057.5:</strong> IR allein; IR mit Licht, externer Sonde oder Beschleunigung; alle zehn Messgrößen; Wiederverbindung und erneute Messung; zweisprachige Datei. Wandabstand und Taschenlampe wurden unabhängig verändert, ohne den Sensor abzudecken. IR und Licht reagierten gleichzeitig qualitativ passend. Dies bestätigt Funktion und Kanalzuordnung, keine quantitative Kalibrierung.</p>
+   <p>Keine unabhängige Kalibrierung oder systematische Langzeitstabilitätsprüfung. Die BLE-Zeitbasis bleibt angenähert. Negative IR-Werte und Werte um 8,191 m sind ungeklärt; sie bleiben ungefiltert, ohne Interpolation oder Nullersetzung erhalten. Für die bisherigen Umweltkanäle bleibt der erste passende Paketdurchlauf nach START unterdrückt; IR und Bewegungskanäle behalten ihn. Weitere externe Fühler und abgeleitete Bewegungsgrößen fehlen weiterhin.</p>
+   <p>Bis zu acht Notifications je Analysezyklus; weitere bleiben vorgemerkt. Ungültige Mischstapel werden vollständig verworfen und gezählt. Nach STOPP gegebenenfalls das Leeren des vorgemerkten Puffers vor dem Pausieren abwarten. Empfangs-/Wartepuffer können unter dauerhafter Überlast wachsen; Rechenlast und Speicherverhalten sind nicht systematisch langzeitgeprüft. Messwertpuffer halten höchstens 12.000 Werte je Kanal, bei etwa 20 Hz ungefähr zehn Minuten: rechtzeitig exportieren. Die Gerätenummerierung wurde an genau zwei Geräten erprobt, nicht an allen 14 Unterrichtsgeräten.</p>
+   <p><strong>Bestätigte finale Android-Nachtests vom 21.11.2026:</strong> Die aktuellen deutschen und zweisprachigen v0.9.7-Dateien aus Commit <code>88396e544828249942015b697ca2dbde89c628b1</code> bestanden Import, Bedienhinweise beziehungsweise Übersetzungen und Messung. Die Wiederaufnahme STOPP → Pause → ▶ → STARTEN sowie alle 13 aktuellen Offline-QR-Segmente mit anschließender IR-Messung wurden erfolgreich geprüft. Frühere Zwölf-Code-Tests betrafen einen vorherigen Kandidatenstand; die Funktionstests sind keine quantitative Kalibrierung.</p>
+   <p><strong>Im Veröffentlichungsablauf noch offen:</strong> Online-QR-Live-Prüfung, HTTP-/Pages-Prüfung und die weiteren Veröffentlichungsschritte. Versionstag und GitHub-Release erfolgen separat.</p>
  </section>
 </div>
 </main>
-<footer>Unabhängiger experimenteller Prototyp im Rahmen eines Physikstudiums, Version v0.9.6. Keine offizielle Integration oder Zusammenarbeit mit den Anbietern von PocketLab und phyphox. <a href="https://github.com/vidonialex/pocketlab-voyager2-phyphox">Quellrepository und technische Hinweise</a>.</footer>
+<footer>Unabhängiger experimenteller Prototyp im Rahmen eines Physikstudiums, Version v0.9.7 mit bestandenen Android-Funktionstests. Keine offizielle Integration oder Zusammenarbeit mit den Anbietern von PocketLab und phyphox. <a href="https://github.com/vidonialex/pocketlab-voyager2-phyphox">Quellrepository und technische Hinweise</a>.</footer>
 </div>
 <script>
 (() => {
-let i=1;const N=8;
+let i=1;const N=13;
 const img=document.getElementById('offline-code');
 const counter=document.getElementById('qr-counter');
-const update=()=>{const nr=String(i).padStart(2,'0');img.src=`qr/offline/v096/QR_${nr}_von_${N}.png`;img.alt=`Offline-QR-Code ${i} von ${N}`;counter.textContent=`Code ${i} von ${N}`;document.getElementById('prev').disabled=i===1;document.getElementById('next').disabled=i===N;};
+const update=()=>{const nr=String(i).padStart(2,'0');img.src=`qr/offline/v097/QR_${nr}_von_${N}.png`;img.alt=`Offline-QR-Code ${i} von ${N}`;counter.textContent=`Code ${i} von ${N}`;document.getElementById('prev').disabled=i===1;document.getElementById('next').disabled=i===N;};
 document.getElementById('prev').addEventListener('click',()=>{if(i>1){i--;update();}});
 document.getElementById('next').addEventListener('click',()=>{if(i<N){i++;update();}});
 update();
