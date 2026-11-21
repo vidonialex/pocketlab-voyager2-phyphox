@@ -1,6 +1,6 @@
 # PocketLab Voyager 2 – Integration in phyphox
 
-**Entwicklungsstand:** v0.9.7 – noch unveröffentlichter Releasekandidat (experimenteller Prototyp). Veröffentlicht: v0.9.6.
+**Version:** v0.9.7 (experimenteller Prototyp; finale Android-Funktionstests bestanden). Versionstag und GitHub-Release sind separate Veröffentlichungsschritte.
 
 **Projektkontext:** Bachelorstudium Physik
 
@@ -18,12 +18,12 @@ Benötigt werden ein PocketLab Voyager 2, ein Android-Smartphone mit Bluetooth u
 
 | Verfahren | Sprache | Internet beim Import | Zugang |
 | --- | --- | --- | --- |
-| Direkter Dateidownload | Deutsch | Ja, zum Herunterladen | [v0.9.7-Kandidat (.phyphox)](docs/experiments/Voyager2_v097_DE.phyphox) |
-| Direkter Dateidownload | Deutsch / Englisch | Ja, zum Herunterladen | [v0.9.7-Kandidat (.phyphox)](docs/experiments/Voyager2_v097_DE_EN.phyphox) |
+| Direkter Dateidownload | Deutsch | Ja, zum Herunterladen | [v0.9.7 (.phyphox)](docs/experiments/Voyager2_v097_DE.phyphox) |
+| Direkter Dateidownload | Deutsch / Englisch | Ja, zum Herunterladen | [v0.9.7 (.phyphox)](docs/experiments/Voyager2_v097_DE_EN.phyphox) |
 | Ein Online-QR-Code | Deutsch / Englisch | Ja | [v0.9.7-QR-Code](docs/qr/online_v097.png) |
 | Offline-QR-Codes (13) | Deutsch | Nein, nach vorherigem Herunterladen | [v0.9.7-QR-Paket (.zip)](docs/downloads/Voyager2_v097_Offline_QR_DE.zip) |
 
-**Importstatus:** Der vorherige Kandidat bestand am 21.11.2026 beide Direktimporte, Messung mit START/STOPP/Wiederverbindung/CSV, den Import aller zwölf damaligen Offline-Codes und einen Funktionstest des darüber importierten Experiments. Nach den aktuellen Textkorrekturen sind beide neuen Dateien und alle dreizehn neuen Codes erneut zu importieren. Der Online-QR verweist auf den erst nach Veröffentlichung erreichbaren Zielpfad.
+**Android-Freigabetests abgeschlossen (21.11.2026):** Die aktuellen deutschen und zweisprachigen v0.9.7-Dateien wurden erfolgreich importiert, Bedienhinweise beziehungsweise Übersetzungen geprüft und Messungen durchgeführt. Die Wiederaufnahme STOPP → Pause → ▶ → STARTEN sowie der Import aller **13 aktuellen Offline-QR-Segmente** mit anschließender IR-Messung waren erfolgreich. Noch offen sind die Online-QR-Live-Prüfung, HTTP-/Pages-Prüfung und die weiteren Veröffentlichungsschritte.
 
 Bei der zweisprachigen Experimentdatei richtet sich die Sprache nach der Spracheinstellung der App beziehungsweise des Smartphones. Die deutsche Datei bleibt unabhängig davon deutsch.
 
@@ -106,12 +106,14 @@ Die externe Temperatursonde wurde auf Android funktional getestet: einzeln, geme
 
 Die HTTP-Erreichbarkeit der veröffentlichten v0.9.6-Projektwebsite und ihrer Downloads wurde am 15.11.2026 geprüft. Der Online-QR-Import auf einem Android-Smartphone bleibt ein offener manueller Test. Die funktionalen Tests bestätigen keine unabhängige Kalibrierung oder metrologische Validierung.
 
-**Bestätigte Android-Tests vom 19.11.2026 (Experiment 057.5):** IR allein; IR mit Licht, externer Temperatursonde oder Beschleunigung; alle zehn Messgrößen gleichzeitig; Wiederverbindung und erneute Messung; deutsch-englische Version. Wandabstand und Beleuchtung wurden unabhängig mit Bewegung beziehungsweise einer Taschenlampe verändert, ohne den Sensor abzudecken. Beide Kanäle reagierten gleichzeitig qualitativ passend. Dies bestätigt Funktion und Kanalzuordnung, keine quantitative Genauigkeit. Für die neuen v0.9.7-Dateien bleiben Direktimport, Darstellung beider Sprachen und Import aller dreizehn neuen Offline-Codes offen; Online-QR-Import und HTTP-Live-Prüfung folgen nach Veröffentlichung.
+**Bestätigte Android-Tests vom 19.11.2026 (Experiment 057.5):** IR allein; IR mit Licht, externer Temperatursonde oder Beschleunigung; alle zehn Messgrößen gleichzeitig; Wiederverbindung und erneute Messung; deutsch-englische Version. Wandabstand und Beleuchtung wurden unabhängig mit Bewegung beziehungsweise einer Taschenlampe verändert, ohne den Sensor abzudecken. Beide Kanäle reagierten gleichzeitig qualitativ passend. Dies bestätigt Funktion und Kanalzuordnung, keine quantitative Genauigkeit. Die abschließenden Android-Nachtests der aktuellen v0.9.7-Dateien folgten am 21.11.2026 und sind ebenfalls bestanden.
+
+**Bestätigte finale Android-Nachtests vom 21.11.2026:** Die aktuellen DE- und DE/EN-Experimentdateien sowie alle 13 Offline-QR-Segmente aus Commit `88396e544828249942015b697ca2dbde89c628b1` wurden erfolgreich importiert und funktional geprüft. Bedienhinweise, Übersetzungen, Messung und Wiederaufnahme STOPP → phyphox pausieren → ▶ → STARTEN bestanden; nach dem Offline-QR-Import war eine IR-Messung erfolgreich. Frühere Tests mit zwölf Codes betrafen einen vorherigen Kandidatenstand. Online-QR-Live-Prüfung und HTTP-/Pages-Prüfung bleiben für den Veröffentlichungsablauf offen. Auch diese Funktionstests sind keine Kalibrierung oder metrologische Genauigkeitsprüfung.
 
 Neue Funktionen, Messergebnisse, technische Erkenntnisse und Bedienhinweise werden zeitnah in der jeweils betroffenen Projektdokumentation ergänzt. Eine vollständige sprachliche, stilistische und gestalterische Überarbeitung folgt separat und verzögert diese fachlichen Aktualisierungen nicht.
 
 ## Projektstatus
 
-**v0.9.7 ist ein noch unveröffentlichter Releasekandidat.** Die zugrunde liegende Integration ist funktional getestet; eine unabhängige Kalibrierung und systematische Langzeitprüfungen fehlen. Rückmeldungen zur Bedienbarkeit, zu weiteren Messgrößen und zur Messdatenqualität sind willkommen.
+**v0.9.7 ist ein experimenteller Prototyp mit bestandenen finalen Android-Funktionstests.** Eine unabhängige Kalibrierung und systematische Langzeitprüfungen fehlen. Versionstag und GitHub-Release erfolgen im gesonderten Veröffentlichungsablauf. Rückmeldungen zur Bedienbarkeit, zu weiteren Messgrößen und zur Messdatenqualität sind willkommen.
 
 PocketLab, Voyager 2 und phyphox sind Produkt- beziehungsweise Projektnamen der jeweiligen Rechteinhaber. Eine offizielle Zusammenarbeit wird nicht beansprucht.

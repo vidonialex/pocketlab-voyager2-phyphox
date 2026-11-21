@@ -50,9 +50,15 @@
     "docs/qr/offline/v097/QR_12_von_13.png": "467a1186f04581e6733d76e0113b2719d4b354f17a2e4264f5c3e549ddf99662",
     "docs/qr/offline/v097/QR_13_von_13.png": "9a2b1d8cb28cf642d869f5c75dab0b4b635af6654d2fe6cef150595facf514db"
   },
-  "notes": "Unpublished v0.9.7 RC: corrected start guidance. Previous candidate passed five Android approval tests on 2026-11-21. Re-import of corrected files/new QR codes pending. Existing v0.9.5/v0.9.6 hashes retained.",
+  "notes": "Final Android follow-up tests passed on 2026-11-21 for the DE/DE_EN experiments and all 13 offline QR segments at commit 88396e544828249942015b697ca2dbde89c628b1: imports, guidance/translations, measurement, STOP/pause/play/START resumption and IR measurement after offline import. Earlier twelve-segment tests describe historical candidates. Android validation is complete; the formal release status is separate. Online-QR live testing, HTTP/Pages verification and publication steps remain pending. No v0.9.7 tag or GitHub Release is claimed. Existing v0.9.5/v0.9.6 hashes retained.",
   "status": "unpublished-release-candidate",
   "offline_segment_payload_bytes_max": 1328,
   "offline_payload_crc32": "107107ba",
-  "offline_payload_sha256": "0f4af8ac83e18e6258ed3d0eac7cdda903b94b8ab5752a7d56bb7c76c3032a3f"
+  "offline_payload_sha256": "0f4af8ac83e18e6258ed3d0eac7cdda903b94b8ab5752a7d56bb7c76c3032a3f",
+  "android_validation": {
+    "status": "passed",
+    "date": "2026-11-21",
+    "experiment_commit": "88396e544828249942015b697ca2dbde89c628b1",
+    "offline_qr_segments": 13
+  }
 }

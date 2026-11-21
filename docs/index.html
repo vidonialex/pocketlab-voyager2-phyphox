@@ -30,14 +30,14 @@
 <body>
 <div class="wrap">
 <header>
-  <div class="eyebrow">Bachelorprojekt Physik · Releasekandidat v0.9.7 · noch unveröffentlicht</div>
+  <div class="eyebrow">Bachelorprojekt Physik · v0.9.7 · Android-Funktionstests bestanden</div>
   <h1>PocketLab Voyager 2 in phyphox</h1>
   <p class="lead">Das PocketLab Voyager 2 über Bluetooth Low Energy mit phyphox verbinden, Messgrößen einzeln oder kombiniert erfassen und die Daten als CSV exportieren. Hier stehen die Experimentdateien und die Installationsanleitungen bereit.</p>
   <nav aria-label="Seiteninhalt"><a href="#download">Dateidownload</a><a href="#online">Online-QR</a><a href="#offline">Offline-QR</a><a href="#anleitung">Messanleitung</a><a href="#messgroessen">Messgrößen</a><a href="#grenzen">Einschränkungen</a></nav>
 </header>
 <main>
 <div class="grid">
- <div class="notice wide"><strong>Releasekandidat v0.9.7:</strong> Die zugrunde liegenden integrierten Dateien haben die Android-Tests vom 19.11.2026 bestanden. Der bisherige Kandidat bestand am 21.11.2026 beide Direktimporte, Messung/START/STOPP/Wiederverbindung/CSV und den Offline-Import aller zwölf Codes samt Funktionstest. Nach der Starttextkorrektur sind die aktualisierten Dateien und Codes erneut zu importieren. Der Online-QR verwendet den erst nach Veröffentlichung erreichbaren Zielpfad. Die bisher veröffentlichte Version ist v0.9.6.</div>
+ <div class="notice wide"><strong>v0.9.7 – Android-Freigabetests abgeschlossen:</strong> Am 21.11.2026 wurden beide aktuellen Sprachdateien erfolgreich importiert, Bedienhinweise beziehungsweise Übersetzungen geprüft und Messungen durchgeführt. Die Wiederaufnahme STOPP → Pause → ▶ → STARTEN und der Import aller <strong>13 aktuellen Offline-QR-Segmente</strong> mit anschließender IR-Messung waren erfolgreich. Online-QR-Live-Prüfung, HTTP-/Pages-Prüfung sowie die weiteren Veröffentlichungsschritte stehen noch aus. Versionstag und GitHub-Release erfolgen separat.</div>
  <section class="card" id="download">
    <h2><span class="accent">01</span> Direkter Download</h2>
    <p>Speichere die gewünschte Experimentdatei auf dem Smartphone und öffne oder importiere sie anschließend in phyphox.</p>
@@ -102,11 +102,12 @@
    <p><strong>Android-Funktionstests vom 19.11.2026, Experiment 057.5:</strong> IR allein; IR mit Licht, externer Sonde oder Beschleunigung; alle zehn Messgrößen; Wiederverbindung und erneute Messung; zweisprachige Datei. Wandabstand und Taschenlampe wurden unabhängig verändert, ohne den Sensor abzudecken. IR und Licht reagierten gleichzeitig qualitativ passend. Dies bestätigt Funktion und Kanalzuordnung, keine quantitative Kalibrierung.</p>
    <p>Keine unabhängige Kalibrierung oder systematische Langzeitstabilitätsprüfung. Die BLE-Zeitbasis bleibt angenähert. Negative IR-Werte und Werte um 8,191 m sind ungeklärt; sie bleiben ungefiltert, ohne Interpolation oder Nullersetzung erhalten. Für die bisherigen Umweltkanäle bleibt der erste passende Paketdurchlauf nach START unterdrückt; IR und Bewegungskanäle behalten ihn. Weitere externe Fühler und abgeleitete Bewegungsgrößen fehlen weiterhin.</p>
    <p>Bis zu acht Notifications je Analysezyklus; weitere bleiben vorgemerkt. Ungültige Mischstapel werden vollständig verworfen und gezählt. Nach STOPP gegebenenfalls das Leeren des vorgemerkten Puffers vor dem Pausieren abwarten. Empfangs-/Wartepuffer können unter dauerhafter Überlast wachsen; Rechenlast und Speicherverhalten sind nicht systematisch langzeitgeprüft. Messwertpuffer halten höchstens 12.000 Werte je Kanal, bei etwa 20 Hz ungefähr zehn Minuten: rechtzeitig exportieren. Die Gerätenummerierung wurde an genau zwei Geräten erprobt, nicht an allen 14 Unterrichtsgeräten.</p>
-   <p><strong>Noch offen:</strong> Direktimport und visuelle Kontrolle beider final versionierten v0.9.7-Dateien sowie Android-Import aller dreizehn neuen Offline-QR-Codes. Online-QR-Scan und HTTP-Live-Prüfung folgen nach Veröffentlichung.</p>
+   <p><strong>Bestätigte finale Android-Nachtests vom 21.11.2026:</strong> Die aktuellen deutschen und zweisprachigen v0.9.7-Dateien aus Commit <code>88396e544828249942015b697ca2dbde89c628b1</code> bestanden Import, Bedienhinweise beziehungsweise Übersetzungen und Messung. Die Wiederaufnahme STOPP → Pause → ▶ → STARTEN sowie alle 13 aktuellen Offline-QR-Segmente mit anschließender IR-Messung wurden erfolgreich geprüft. Frühere Zwölf-Code-Tests betrafen einen vorherigen Kandidatenstand; die Funktionstests sind keine quantitative Kalibrierung.</p>
+   <p><strong>Im Veröffentlichungsablauf noch offen:</strong> Online-QR-Live-Prüfung, HTTP-/Pages-Prüfung und die weiteren Veröffentlichungsschritte. Versionstag und GitHub-Release erfolgen separat.</p>
  </section>
 </div>
 </main>
-<footer>Unabhängiger experimenteller Prototyp im Rahmen eines Physikstudiums, noch unveröffentlichter Releasekandidat v0.9.7. Keine offizielle Integration oder Zusammenarbeit mit den Anbietern von PocketLab und phyphox. <a href="https://github.com/vidonialex/pocketlab-voyager2-phyphox">Quellrepository und technische Hinweise</a>.</footer>
+<footer>Unabhängiger experimenteller Prototyp im Rahmen eines Physikstudiums, Version v0.9.7 mit bestandenen Android-Funktionstests. Keine offizielle Integration oder Zusammenarbeit mit den Anbietern von PocketLab und phyphox. <a href="https://github.com/vidonialex/pocketlab-voyager2-phyphox">Quellrepository und technische Hinweise</a>.</footer>
 </div>
 <script>
 (() => {
