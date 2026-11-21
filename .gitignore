@@ -7,3 +7,7 @@ __pycache__/
 *.btsnoop*
 .vscode/
 .DS_Store
+/captures/
+/releases/
+/release_checks/
+/teststaende/
