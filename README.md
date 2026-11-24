@@ -116,4 +116,12 @@ Neue Funktionen, Messergebnisse, technische Erkenntnisse und Bedienhinweise werd
 
 **v0.9.7 ist ein experimenteller Prototyp mit bestandenen finalen Android-Funktionstests.** Eine unabhängige Kalibrierung und systematische Langzeitprüfungen fehlen. Versionstag und GitHub-Release erfolgen im gesonderten Veröffentlichungsablauf. Rückmeldungen zur Bedienbarkeit, zu weiteren Messgrößen und zur Messdatenqualität sind willkommen.
 
-PocketLab, Voyager 2 und phyphox sind Produkt- beziehungsweise Projektnamen der jeweiligen Rechteinhaber. Eine offizielle Zusammenarbeit wird nicht beansprucht.
+## Lizenz und Zitierung
+
+Die eigenen Beiträge von Alexander Vidoni werden unter der **[PolyForm Noncommercial License 1.0.0](LICENSE)** angeboten: öffentlich verfügbarer Quellcode unter einer nichtkommerziellen Lizenz, keine OSI-konforme Open-Source-Software. Nichtkommerzielle Verwendung, Veränderung und Weitergabe sind nach den Lizenzbedingungen erlaubt. Schulen und Universitäten als Bildungsinstitutionen sowie öffentliche Forschungsorganisationen dürfen das Projekt unabhängig von der Finanzierung nutzen, einschließlich kostenpflichtiger Lehre durch solche Bildungsinstitutionen. Für andere Forschungseinrichtungen kommt insbesondere ein nichtkommerzieller Verwendungszweck in Betracht; kommerzielle Forschung ist nicht pauschal freigegeben.
+
+Bei Weitergabe müssen der Lizenztext oder seine URL sowie der verpflichtende Copyright-Hinweis aus **[NOTICE](NOTICE)** mitgegeben und erhalten bleiben. Eine öffentliche Nennung bei jeder Nutzung oder eine besondere UI-Erhaltungspflicht wird nicht zusätzlich verlangt. Für kommerzielle Nutzungen außerhalb der erlaubten Zwecke ist eine gesonderte Berechtigung der jeweiligen Rechteinhaber erforderlich; Alexander Vidoni kann seine eigenen Beiträge separat kommerziell lizenzieren. Rechte an Beiträgen Dritter werden dadurch nicht eingeräumt.
+
+Weitere Erläuterungen zu [Lizenzumfang, Herkunft und künftigen Beiträgen](docs/LIZENZ.md) sowie die [Zitiermetadaten](CITATION.cff) sind im Repository enthalten. Wissenschaftliche Zitierung wird empfohlen, ist keine zusätzliche Lizenzbedingung. Die Metadaten beziehen sich auf die zuletzt veröffentlichte Version v0.9.7 vom 21.11.2026; bestehende Releases, Experimente und QR-Pakete werden durch diese Lizenzvorbereitung nicht verändert.
+
+PocketLab, Voyager 2 und phyphox sind Produkt- beziehungsweise Projektnamen der jeweiligen Rechteinhaber. Das Projekt ist unabhängig; es besteht keine offizielle Verbindung oder behauptete Zusammenarbeit mit PocketLab oder phyphox.
